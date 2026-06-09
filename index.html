@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Симулятор линз</title>
+<link rel="icon" type="image/png" href="favicon.png">
+
+<!-- SEO мета-теги -->
+<meta name="description" content="Интерактивный симулятор линз и лучей. Собирающие и рассеивающие линзы, преломление, фокусы, лазеры, преграды. Наглядно и бесплатно.">
+<meta name="author" content="Линза-симулятор">
+<meta name="keywords" content="линзы, оптика, преломление лучей, симулятор линз, собирающая линза, рассеивающая линза, физика, интерактив, фокус, луч, лазер, геометрическая оптика">
+
+<!-- Open Graph / Facebook / VK / Telegram -->
+<meta property="og:title" content="Линза-симулятор — 3D-оптика: лучи, преломление, фокус">
+<meta property="og:description" content="Создайте оптическую схему. Добавляйте линзы, лазеры и преграды. Лучи преломляются в реальном времени.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sermart.github.io/linz-simulator/">
+<meta property="og:image" content="https://sermart.github.io/linz-simulator/preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:alt" content="Линза-симулятор — интерфейс с линзами и лучами">
+<meta property="og:site_name" content="Линза-симулятор">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Линза-симулятор — симуляция преломления лучей">
+<meta name="twitter:description" content="Онлайн-инструмент для изучения оптики: фокусировка, рассеивание, лазеры, линзы.">
+<meta name="twitter:image" content="https://sermart.github.io/linz-simulator/preview.png">
+
+<!-- Telegram -->
+<meta property="telegram:title" content="Линза-симулятор — оптика онлайн">
+<meta property="telegram:description" content="Симуляция линз и лучей. Идеально для студентов и преподавателей физики.">
+<meta property="telegram:image" content="https://sermart.github.io/linz-simulator/preview.png">
+
+<!-- VK -->
+<meta property="vk:image" content="https://sermart.github.io/linz-simulator/preview.png">
+
+<!-- Мобильные браузеры и тема -->
+<meta name="theme-color" content="#0a0f1c">
+<meta name="apple-mobile-web-app-title" content="Линза-симулятор">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="mobile-web-app-capable" content="yes">
+
+<!-- Google Fonts (оставлю, чтобы сохранить стиль как в примере, но можно убрать если мешает — не влияет на симулятор) -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+
+<!-- Подключаем стили и скрипты исходного симулятора -->
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="top-menu">
+    <div class="logo">⚡ OPTIC<span>LAB</span> · ЛИНЗЫ</div>
+    <div class="buttons">
+        <button onclick="addSource()">🔦 Лазер</button>
+        <button onclick="addLens('converging')">🔵 Собирающая линза (С)</button>
+        <button onclick="addLens('diverging')">🔴 Рассеивающая линза (Р)</button>
+        <button onclick="addObstacle()">⬛ Преграда</button>
+        <button onclick="clearAll()" class="btn-clear">🧹 Очистить всё</button>
+    </div>
+    <div class="edit-zone" id="edit-zone">
+        <div class="placeholder">✨ выделите объект на сцене</div>
+    </div>
+</div>
+
+<div class="info-panel">
+    <div class="info-title">🔬 УПРАВЛЕНИЕ</div>
+    <div>🖱️ Клик / Перетаскивание — двигать объект</div>
+    <div>⚙️ Настройки появятся сверху после выбора элемента</div>
+    <div>🔵 Собирающая (фокусирует лучи) | 🔴 Рассеивающая (разбрасывает)</div>
+    <div>🔄 Колесико мыши или кольцо вокруг объекта — вращать</div>
+</div>
+
+<canvas id="labCanvas"></canvas>
+
+<script src="script.js"></script>
+</body>
+</html>
